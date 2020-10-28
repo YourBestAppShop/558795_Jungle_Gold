@@ -10,6 +10,14 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json", {onProgress: UnityProgress});
+      var element = document.getElementById("GameContainer");
+
+if (element.requestFullScreen)
+  element.requestFullScreen();
+else if (element.webkitRequestFullScreen)
+  element.webkitRequestFullScreen();
+else if (element.mozRequestFullScreen)
+  element.mozRequestFullScreen();
     </script>
   </head>
   <body>
