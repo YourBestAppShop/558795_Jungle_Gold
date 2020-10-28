@@ -10,14 +10,6 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL.json", {onProgress: UnityProgress});
-      var element = document.getElementById("GameContainer");
-
-if (element.requestFullScreen)
-  element.requestFullScreen();
-else if (element.webkitRequestFullScreen)
-  element.webkitRequestFullScreen();
-else if (element.mozRequestFullScreen)
-  element.mozRequestFullScreen();
     </script>
   </head>
   <body>
@@ -25,9 +17,18 @@ else if (element.mozRequestFullScreen)
       <div id="gameContainer" style="width: 300px; height: 600px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        <div class="fullscreen" οnclick="ChangeCanvas()"></div>
         <div class="title">Yura_1_Slots</div>
       </div>
     </div>
   </body>
+   <script type="text/javascript">
+      function ChangeCanvas()
+      {
+         document.getElementById("gameContainer").style.width = window.innerWidth + "px";
+         document.getElementById("gameContainer").style.height = window.innerHeight + "px";
+         document.getElementById("#canvas").style.width = window.innerWidth + "px";
+         document.getElementById("#canvas").style.height = window.innerHeight + "px";
+      }
+    </script>
 </html>
